@@ -31,6 +31,16 @@ post '/visit' do
 	@barber = params[:barber]
 	@color = params[:color]
 
+	#name, phone, datestamp, barber, color
+
+	c = Client.new
+	c.name = @username
+	c.phone = @phone
+	c.datestamp = @datestamp
+	c.barber = @barber
+	c.color = @color
+	c.save
+
 
 
 	erb "<h2>Спасибо, вы записались!</h2>"
