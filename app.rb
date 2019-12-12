@@ -6,7 +6,8 @@ require 'sinatra/activerecord'
 set :database, "sqlite3:barbershop.db"
 
 class Client < ActiveRecord::Base
-	validates :name, presence: true #:name Это 1 параметр функции validates, presence: true...
+	validates :name, presence: true, length: { minimum: 3 } 
+  #:name Это 1 параметр функции validates, presence: true...
 									# 2 параметр фции validates	
 	validates :phone, presence: true
 	validates :datestamp, presence: true
